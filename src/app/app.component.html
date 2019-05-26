@@ -3,19 +3,49 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+  
+  <div class="l1">
+    <h2 class="l2">Blotter</h2>
+    <div class="col-md-10">
+  
+      <table class="table table-bordered l4">
+        <thead>
+          <tr style="color: white;">
+            <th scope="col">{{displayedColumns[0]}}</th>
+            <th scope="col">{{displayedColumns[1]}}</th>
+            <th scope="col">{{displayedColumns[2]}}</th>
+            <th scope="col">{{displayedColumns[3]}}</th>
+            <th scope="col">{{displayedColumns[4]}}</th>
+            <th scope="col">{{displayedColumns[5]}}</th>
+            <th scope="col">{{displayedColumns[6]}}</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let val of dataSource">
+          <tr>
+            <td>{{val.Time}}</td>
+            <td>{{val.Side}}}</td>
+            <td>{{val.OrderType}}</td>
+            <td>{{val.CcPair}}</td>
+            <td>{{val.Price}}</td>
+            <td>{{val.Amount}}</td>
+            <td>{{val.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+</div>
+<h4>I am printed</h4>
+<div>
+  <li *ngFor="let cval of dataSource">
+      <h4>I am coming here</h4>
+      <h5>{{cval.Time}}</h5>
+  </li>
+</div>
+
+
+<div *ngFor="let order of orders">
+  {{order.Time}}
+</div>

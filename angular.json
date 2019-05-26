@@ -22,10 +22,15 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
+            "scripts": [
+              "C:/Users/Mns/myApp/node_modules/jquery/dist/jquery.min.js",
+              "C:/Users/Mns/myApp/node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
-            "scripts": [],
+
+            "styles": [
+              "src/styles.css",
+              "C:/Users/Mns/myApp/node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
