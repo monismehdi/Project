@@ -11,9 +11,6 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'myApp';
 
-  // cVal:any = [];
-  displayedColumns  :  string[] = ['Time', 'Side', 'OrderType', 'CcPair', 'Price', 'Ammount', 'Status'];
-  // dataSource = [];
   dataColumn : any;
   dataSource : any;
 
@@ -22,17 +19,7 @@ export class AppComponent {
   ngOnInit(){
     this.getColumn();
     this.getData();
-    this.blatterService.test();
-    console.log("testing...")
-    // this.fetchBlatterColumnValues();
   }
-  //   fetchBlatterColumnValues(){
-  //     this.cVal = [];
-  //     this.blatterService.fetchBlatterColumnValues().subscribe((data: {}) => {
-  //     this.cVal = data;
-  //     console.log(data);
-  //   })
-  // }
 
   getColumn(){
     this.blatterService.getColumn().subscribe((data: Array<object>) => {

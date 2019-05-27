@@ -10,15 +10,12 @@ import { catchError, map, tap, retry } from 'rxjs/operators';
 export class BlatterService {
 
   private baseUrl1="https://restsimulator.intuhire.com";
-  private baseUrl2="https://restsimulator.intuhire.com/orders";
+  
   private baseUrl3="https://restsimulator.intuhire.com";
 
   constructor(private http: HttpClient) { }
   
-  // try 3
-  // getData(){
-  //   return this.http.get(this.baseUrl2);
-  // }
+ 
   getData(){
     return this.http.get(`${this.baseUrl3}/orders`);
   }
@@ -30,28 +27,7 @@ export class BlatterService {
   test(){
     console.log("I am test");
   }
-  // try 2
-
-  // private extractData(res: Response) {
-  //   let body = res;
-  //   return body || { };
-  // }
-
-  // fetchBlatterColumnValues(): Observable<any>{
-  //   return this.http.get(this.baseUrl2)
-  //   .pipe(
-  //     map(this.extractData));
-        
-  // }
-
-  // fetchBlatterColumnValues(): Observable<any>{
-  //   return this.http.get(this.baseUrl2)
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.handleError)
-  //   )   
-  // }
-
+ 
 
   handleError(error) {
     let errorMessage = '';
