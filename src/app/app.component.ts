@@ -14,11 +14,13 @@ export class AppComponent {
   // cVal:any = [];
   displayedColumns  :  string[] = ['Time', 'Side', 'OrderType', 'CcPair', 'Price', 'Ammount', 'Status'];
   // dataSource = [];
+  dataColumn : any;
   dataSource : any;
 
   constructor(private blatterService : BlatterService) {}
 
   ngOnInit(){
+    this.getColumn();
     this.getData();
     this.blatterService.test();
     console.log("testing...")
@@ -31,6 +33,14 @@ export class AppComponent {
   //     console.log(data);
   //   })
   // }
+
+  getColumn(){
+    this.blatterService.getColumn().subscribe((data: Array<object>) => {
+      this.dataColumn = data;
+      console.log(data);
+    })
+  }
+
   getData(){
     this.blatterService.getData().subscribe((data: Array<object>) => {
       this.dataSource = data;

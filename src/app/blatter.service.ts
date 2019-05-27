@@ -9,7 +9,7 @@ import { catchError, map, tap, retry } from 'rxjs/operators';
 })
 export class BlatterService {
 
-  private baseUrl1="https://restsimulator.intuhire.com/blotter_columns";
+  private baseUrl1="https://restsimulator.intuhire.com";
   private baseUrl2="https://restsimulator.intuhire.com/orders";
   private baseUrl3="https://restsimulator.intuhire.com";
 
@@ -21,6 +21,10 @@ export class BlatterService {
   // }
   getData(){
     return this.http.get(`${this.baseUrl3}/orders`);
+  }
+
+  getColumn(){
+    return this.http.get(`${this.baseUrl1}/blotter_columns`);
   }
 
   test(){

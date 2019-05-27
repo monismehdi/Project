@@ -1,24 +1,13 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-
+<div class="l0"style="text-align:center">
   
   <div class="l1">
     <h2 class="l2">Blotter</h2>
-    <div class="col-md-10">
+    <div class="col-md-12 l3">
   
       <table class="table table-bordered l4">
         <thead>
           <tr style="color: white;">
-            <th scope="col">{{displayedColumns[0]}}</th>
-            <th scope="col">{{displayedColumns[1]}}</th>
-            <th scope="col">{{displayedColumns[2]}}</th>
-            <th scope="col">{{displayedColumns[3]}}</th>
-            <th scope="col">{{displayedColumns[4]}}</th>
-            <th scope="col">{{displayedColumns[5]}}</th>
-            <th scope="col">{{displayedColumns[6]}}</th>
+            <th *ngFor="let col of dataColumn" scope="col">{{col.column_name}}</th>
           </tr>
         </thead>
         <tbody *ngFor="let val of dataSource">
@@ -47,15 +36,4 @@
     </div>
   </div>
 </div>
-<h4>I am printed</h4>
-<div>
-  <li *ngFor="let cval of dataSource">
-      <h4>I am coming here</h4>
-      <h5>{{cval.Time}}</h5>
-  </li>
-</div>
-
-
-<div *ngFor="let order of orders">
-  {{order.Time}}
-</div>
+<div class="l7"></div>
