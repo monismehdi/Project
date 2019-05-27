@@ -6,14 +6,22 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+
+import { FormsModule } from '@angular/forms';
+
+import { GrdFilterPipe } from './grd-filter.pipe';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,GrdFilterPipe
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

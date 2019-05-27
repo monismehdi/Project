@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSort, MatTableDataSource} from '@angular/material';
 import { BlatterService } from './blatter.service';
 
 import { Observable } from 'rxjs';
@@ -11,14 +12,20 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'myApp';
 
+  public searchText : String;
+  
+  
+  public searchString: String;
   dataColumn : any;
   dataSource : any;
+
+  colName : String;
 
   constructor(private blatterService : BlatterService) {}
 
   ngOnInit(){
     this.getColumn();
-    this.getData();
+    this.getData();    
   }
 
   getColumn(){
@@ -27,7 +34,8 @@ export class AppComponent {
       console.log(data);
     })
   }
-
+  
+  
   getData(){
     this.blatterService.getData().subscribe((data: Array<object>) => {
       this.dataSource = data;

@@ -2,15 +2,29 @@
   
   <div class="l1">
     <h2 class="l2">Blotter</h2>
+
+    
     <div class="col-md-12 l3">
-  
+      <br>
+      <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
+      <br>
+      <br>
       <table class="table table-bordered l4">
+          
         <thead>
           <tr style="color: white;">
-            <th *ngFor="let col of dataColumn" scope="col">{{col.column_name}}</th>
+            <th *ngFor="let col of dataColumn">
+              <div>
+                  <div> {{col.column_name}}</div>
+                  <!-- <input [(ngModel)]="searchText" name="searchText" placeholder="search text goes here"> -->
+              </div>
+            </th>
+              
+            
           </tr>
         </thead>
-        <tbody *ngFor="let val of dataSource">
+        
+        <tbody *ngFor="let val of dataSource | grdFilter: {CcyPair: searchText, Status:searchText, Time:searchText}; let i=index;">
           <tr>
             <td class="c1">{{val.Time}}</td>
 
