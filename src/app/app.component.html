@@ -6,7 +6,7 @@
     
     <div class="col-md-12 l3">
       <br>
-      <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
+      <!-- <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox"> -->
       <br>
       <br>
       <table class="table table-bordered l4">
@@ -16,7 +16,16 @@
             <th *ngFor="let col of dataColumn">
               <div>
                   <div> {{col.column_name}}</div>
-                  <!-- <input [(ngModel)]="searchText" name="searchText" placeholder="search text goes here"> -->
+
+                  <div *ngIf="'CcyPair' == col.column_name">
+                      <input [(ngModel)]="ccyPairFilter" (ngModelChange)="filterGrid()" placeholder="Search.." class="advancedSearchTextbox">
+                  </div>
+
+
+                  <div *ngIf="'Status' == col.column_name">
+                      <input [(ngModel)]="statusFilter" placeholder="Search.."(ngModelChange)="filterGrid()"  class="advancedSearchTextbox">
+                  </div>
+  
               </div>
             </th>
               
@@ -24,7 +33,7 @@
           </tr>
         </thead>
         
-        <tbody *ngFor="let val of dataSource | grdFilter: {CcyPair: searchText, Status:searchText, Time:searchText}; let i=index;">
+        <tbody *ngFor="let val of filteredData">
           <tr>
             <td class="c1">{{val.Time}}</td>
 
