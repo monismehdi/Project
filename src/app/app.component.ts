@@ -18,8 +18,10 @@ export class AppComponent {
 
   constructor(private blatterService : BlatterService) {}
 
-  ngOnInut(){
+  ngOnInit(){
     this.getData();
+    this.blatterService.test();
+    console.log("testing...")
     // this.fetchBlatterColumnValues();
   }
   //   fetchBlatterColumnValues(){

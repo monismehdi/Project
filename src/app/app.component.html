@@ -23,13 +23,23 @@
         </thead>
         <tbody *ngFor="let val of dataSource">
           <tr>
-            <td>{{val.Time}}</td>
-            <td>{{val.Side}}}</td>
-            <td>{{val.OrderType}}</td>
-            <td>{{val.CcPair}}</td>
-            <td>{{val.Price}}</td>
-            <td>{{val.Amount}}</td>
-            <td>{{val.status}}</td>
+            <td class="c1">{{val.Time}}</td>
+
+            
+            <td class="c2" [ngClass]="{
+              'buy' : val.Side == 'Buy',
+              'sell' : val.Side == 'Sell'
+              }">{{val.Side}}</td>
+            
+            <td class="c3">{{val.OrderType}}</td>
+            <td class="c4">{{val.CcyPair}}</td>
+            <td class="c5">{{val.Price}}</td>
+            <td class="c6">{{val.Amount}}</td>
+            <td class="c7" [ngClass]="{
+              'filled': val.Status == 'Filled',
+              'working': val.Status == 'Working',
+              'cancelled': val.Status == 'Cancelled'
+              }">{{val.Status}}</td>
           </tr>
         </tbody>
       </table>

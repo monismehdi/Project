@@ -22,6 +22,10 @@ export class BlatterService {
   getData(){
     return this.http.get(`${this.baseUrl3}/orders`);
   }
+
+  test(){
+    console.log("I am test");
+  }
   // try 2
 
   // private extractData(res: Response) {

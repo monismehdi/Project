@@ -13,3 +13,25 @@
     background-color: #01325B;
     padding-bottom: 5cm;
 }
+
+
+.c1,.c3,.c4,.c5,.c6{
+    color: #FFC200;
+}
+
+.buy{
+    color: #00A95D;
+}
+.sell{
+    color: #E7152D;
+}
+
+.filled{
+    color: #A9A9A9;
+}
+.working{
+    color: #FFF;
+}
+.cancelled{
+    color: #E7152D;
+}
