@@ -41,14 +41,14 @@ export class AppComponent {
 
 
   filterGrid(){
-    if((this.ccyPairFilter == undefined || this.ccyPairFilter == '') &&  (this.statusFilter == undefined || this.statusFilter == '')){
+    if(this.isEmpty(this.ccyPairFilter) && this.isEmpty(this.statusFilter)){
       this.resetGrid();
       return;
     }
 
     this.filteredData = this.dataSource;
     if(!this.isEmpty(this.ccyPairFilter)){
-      this.filteredData = this.filterForCcyPair(this.dataSource);
+      this.filteredData = this.filterForCcyPair(this.filteredData);
     }    
     
     if(!this.isEmpty(this.statusFilter)){
@@ -56,11 +56,11 @@ export class AppComponent {
     }
 
   }
-
+  
   resetGrid(){
     this.filteredData = this.dataSource;
   }
-
+ 
 
   filterForCcyPair(orders){
     let filteredOrders = [];
