@@ -17,6 +17,11 @@
               <div>
                   <div> {{col.column_name}}</div>
 
+                  <div *ngIf="'Time' == col.column_name">
+                      <button (click)="asc == 1 ? sortDesc() : sortAsc()">Sort</button>
+                      <!-- <button (click)="sortMe()">Sort</button> -->
+                  </div>
+
                   <div *ngIf="'CcyPair' == col.column_name">
                       <input [(ngModel)]="ccyPairFilter" (ngModelChange)="filterGrid()" placeholder="Search.." class="advancedSearchTextbox">
                   </div>
