@@ -23,14 +23,10 @@
               "src/assets"
             ],
             "scripts": [
-              "C:/Users/Mns/myApp/node_modules/jquery/dist/jquery.min.js",
-              "C:/Users/Mns/myApp/node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ],
+             ],
 
             "styles": [
-              "src/styles.css",
-              "C:/Users/Mns/myApp/node_modules/bootstrap/dist/css/bootstrap.min.css"
-            ],
+              "src/styles.css"],
             "es5BrowserSupport": true
           },
           "configurations": {
